@@ -1,0 +1,15 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+
+
+    <h3 style="text-align:center;">SignUP</h3>
+    <div style="width: 400px; margin: 2rem auto;">
+        <form style="text-align:center;" action="{% url 'accountapp:create' %}" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-secondary rounded-pill col-6 mt-3" value="SUBMIT">
+        </form>
+    </div>
+{% endblock %}

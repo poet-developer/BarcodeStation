@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os.path
 from pathlib import Path
 import environ,os
+from django.urls import reverse_lazy
 
 env = environ.Env(
     # set casting, default value
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accountapp'
+    'accountapp',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticsfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:home')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
