@@ -10,6 +10,9 @@
         <input type="submit" class="btn btn-secondary" value="SUBMIT">
         </div>
     </form>
-
-    <div>{{text}}</div>
+    {% if text %}
+        {% for data in text %}
+        <div>{{data.text}}</div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
