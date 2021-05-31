@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <form action="/accounts/" method="POST">
+        {% csrf_token %}
+        <div>
+        <input type="text" placeholder="comment Hello!" name="input_text">
+        </div>
+        <div>
+        <input type="submit" class="btn btn-secondary" value="SUBMIT">
+        </div>
+    </form>
+
+    <div>{{text}}</div>
+{% endblock %}
