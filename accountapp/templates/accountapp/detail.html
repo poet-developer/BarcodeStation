@@ -1,0 +1,18 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+
+    <div style="text-align:center;">
+        <h3>My Page</h3>
+        <div style="width: 400px; margin: 0 auto; font-size:2.5rem;">
+            {{ target_user.username }}
+        </div>
+        <div>
+            {{ target_user.date_joined }}
+        </div>
+        <div><a href="{% url 'accountapp:update' pk=target_user.pk %}">Change Info</a></div>
+        <div><a href="{% url 'accountapp:delete' pk=target_user.pk %}"><input class="btn btn-secondary rounded-pill col-1 mt-3" type="button"value="QUIT"></a></div>
+    </div>
+
+{% endblock %}

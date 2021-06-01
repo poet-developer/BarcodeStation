@@ -1,0 +1,18 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+    <h3 style="text-align:center;">Change Info</h3>
+    <div style="width: 400px; margin: 2rem auto;">
+      <div style="width: 400px; margin: 0 auto; font-size:2.5rem;">
+            {{ target_user.username }}
+        </div>
+        <div>
+            {{ target_user.date_joined }}
+        </div>
+        <form style="text-align:center;" action="{% url 'accountapp:delete' pk=target_user.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="QUIT">
+        </form>
+    </div>
+{% endblock %}
