@@ -1,0 +1,14 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+
+    <h3 style="text-align:center;">Create Your Profile:)</h3>
+    <div style="width: 400px; margin: 2rem auto;">
+        <form style="text-align:center;" action="{% url 'profileapp:create' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-secondary rounded-pill col-6 mt-3" value="SUBMIT">
+        </form>
+    </div>
+{% endblock %}
