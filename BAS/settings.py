@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'accountapp',
     'bootstrap4',
     'profileapp',
+    'articleapp',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticsfiles')
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

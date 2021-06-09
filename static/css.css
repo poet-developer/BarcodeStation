@@ -1,0 +1,22 @@
+ .header {
+    text-align : center;
+    padding-top: 2rem;
+    height: 120px;
+ }
+
+ .header-logo{
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 3rem;
+    margin-bottom: -0.8rem;
+ }
+
+  .footer {
+    text-align : center;
+    height: 150px;
+ }
+
+ .footer-logo{
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-size: 2rem;
+    margin-top: 0.8rem;
+ }
