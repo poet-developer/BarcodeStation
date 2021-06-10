@@ -1,0 +1,16 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+    <h3 style="text-align:center;">Delete Article</h3>
+    <div style="width: 400px; margin: 2rem auto;">
+        <div class="mb-3">
+            <h4>Delete Article : {{target_article.title }}</h4>
+            <p style="color:red; font-size: 2rem;" > Are You Sure to delete this? </p>
+        </div>
+        <form style="text-align:center;" action="{% url 'articleapp:delete' pk=target_article.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3" value="Delete">
+        </form>
+    </div>
+{% endblock %}

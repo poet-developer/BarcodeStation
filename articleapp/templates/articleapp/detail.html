@@ -1,0 +1,20 @@
+{% extends 'index.html' %}}
+{% load bootstrap4 %}
+
+{% block body %}
+
+    <div style="text-align:center;">
+        <div>
+            <h2 class="article_title">{{ target_article.title }}</h2>
+            <h5><span>by.</span>{{ target_article.wrtier.profile.nickname }}</h5>
+            <figure><img style="width: 100%; border-radius:1rem;"src="{{ target_article.image.url }}" alt=""></figure>
+            <div>{{ target_article.content }}</div>
+        </div>
+        {% if target_article.wrtier == user %}
+        <a href="{% url 'articleapp:update' pk=target_article.pk %}"><div style="text-align:center;" class="btn btn-primary rounded-pill col-1 mt-3">Update</div></a>
+        <a href="{% url 'articleapp:delete' pk=target_article.pk %}"><div style="text-align:center;" class="btn btn-dark rounded-pill col-1 mt-3">Delete</div></a>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
