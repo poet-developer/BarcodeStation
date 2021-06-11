@@ -11,8 +11,14 @@
             <div>{{ target_article.content }}</div>
         </div>
         {% if target_article.wrtier == user %}
-        <a href="{% url 'articleapp:update' pk=target_article.pk %}"><div style="text-align:center;" class="btn btn-primary rounded-pill col-1 mt-3">Update</div></a>
-        <a href="{% url 'articleapp:delete' pk=target_article.pk %}"><div style="text-align:center;" class="btn btn-dark rounded-pill col-1 mt-3">Delete</div></a>
+        <a href="{% url 'articleapp:update' pk=target_article.pk %}">
+            <div style="text-align:center;" class="btn btn-primary rounded-pill col-2 mt-3">
+                Update</div>
+        </a>
+        <a href="{% url 'articleapp:delete' pk=target_article.pk %}">
+            <div style="text-align:center;" class="btn btn-danger rounded-pill col-2 mt-3">
+                Delete</div>
+        </a>
         {% endif %}
 
     </div>

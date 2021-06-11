@@ -1,6 +1,6 @@
 <header class="header">
     <h1 class="header-logo">BarcodeStation</h1>
-    <span>span1</span>
+    <a href="{% url 'articleapp:list' %}"><span>Article</span></a>
     <span>span2</span>
     {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{request.path}}"><span>Login</span></a>
