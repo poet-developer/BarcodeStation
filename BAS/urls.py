@@ -23,4 +23,5 @@ urlpatterns = [
     path('accounts/',include('accountapp.urls')),
     path('profiles/',include('profileapp.urls')),
     path('articles/',include('articleapp.urls')),
+    path('cooments/',include('commentapp.urls')),
 ]
