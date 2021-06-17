@@ -1,7 +1,7 @@
 <header class="header">
     <h1 class="header-logo">BarcodeStation</h1>
     <a href="{% url 'articleapp:list' %}"><span>Article</span></a>
-    <span>span2</span>
+    <a href="{% url 'projectapp:list' %}"><span>Project</span></a>
     {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{request.path}}"><span>Login</span></a>
         <a href="{% url 'accountapp:create' %}"><span>SignUp</span></a>

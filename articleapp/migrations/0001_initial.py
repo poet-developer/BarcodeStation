@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('content', models.TextField(null=True)),
                 ('image', models.ImageField(upload_to='article/')),
                 ('created_at', models.DateField(auto_now_add=True, null=True)),
-                ('wrtier', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='article', to=settings.AUTH_USER_MODEL)),
+                ('writer', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='article', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

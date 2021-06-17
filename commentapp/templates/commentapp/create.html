@@ -1,0 +1,15 @@
+{% load bootstrap4 %}
+
+<div>
+    <h3 style="text-align:center;">Your Comment</h3>
+    <div style="width: 400px; margin: 2rem auto;">
+        <form style="text-align:center;" action="{% url 'commentapp:create' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% if user.is_authenticated %}
+            <input type="submit" class="btn btn-secondary rounded-pill col-6 mt-3" value="SUBMIT">
+            {% endif %}
+            <input type="hidden" name="article_pk" value={{article.pk}}>
+        </form>
+    </div>
+</div>

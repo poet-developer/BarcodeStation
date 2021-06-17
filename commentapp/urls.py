@@ -1,9 +1,10 @@
 from django.urls import path
 
-from commentapp.views import CommentCreateView
+from commentapp.views import CommentCreateView,CommentDeleteView
 
-app_name = 'coomentapp'
+app_name = 'commentapp'
 
 urlpatterns = [
-    path('',CommentCreateView.as_view(),name='create')
+    path('create/',CommentCreateView.as_view(),name='create'),
+    path('delete/<int:pk>',CommentDeleteView.as_view(),name='delete'),
 ]
