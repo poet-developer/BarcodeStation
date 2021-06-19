@@ -9,6 +9,9 @@
             <div>{{ target_project.description }}</div>
         </div>
     <hr>
+        <div>
+             {% include 'snippets/list_Fragment.html' with article_list=object_list %}
+        </div>
         </div>
 {% endblock %}
 
