@@ -12,29 +12,14 @@ from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import UserUpdateForm
-from accountapp.models import TextDB
 from articleapp.models import Article
 
 has_ownership = [account_ownership_required, login_required]
 
-def home(request):
-
-    if request.method == 'POST':
-        temp = request.POST.get('input_text')
-        initial_DB = TextDB()
-        initial_DB.text = temp
-        initial_DB.save()
-
-        return HttpResponseRedirect('.')
-    else:
-        text = TextDB.objects.all()
-
-        return render(request, 'accountapp/home.html', context={'text':text})
-
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:home')
+    success_url = reverse_lazy('home')
     template_name = 'accountapp/create.html'
 
 
@@ -59,7 +44,7 @@ class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
     form_class = UserUpdateForm
-    success_url = reverse_lazy('accountapp:home')
+    success_url = reverse_lazy('home')
     template_name = 'accountapp/update.html'
 
 
@@ -68,5 +53,5 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:home')
-    template_name =  'accountapp/delete.html'
+    success_url = reverse_lazy('home')
+    template_name = 'accountapp/delete.html'
