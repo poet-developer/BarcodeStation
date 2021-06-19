@@ -27,6 +27,7 @@ class SubscribeView(RedirectView):
             Subscribe(user=user, project=project).save()
         return super(SubscribeView,self).get(self, request, *args, **kwargs)
 
+@method_decorator(login_required,'get')
 class SubscribeListView(ListView):
     model = Article
     context_object_name = 'article_list'

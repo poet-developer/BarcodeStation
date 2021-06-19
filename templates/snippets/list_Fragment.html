@@ -22,7 +22,7 @@
   <div class="container">
       {% for article in article_list %}
         <a href="{% url 'articleapp:detail' pk=article.pk %}">
-          {% ingotclude 'snippets/card.html' with article=article%}
+          {% include 'snippets/card.html' with article=article%}
         </a>
       {% endfor %}
   </div>

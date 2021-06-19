@@ -2,7 +2,8 @@
 {% load bootstrap4 %}
 
 {% block body %}
-
+<script src="//cdn.jsdelivr.net/npm/medium-editor@5.23.2/dist/js/medium-editor.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@5.23.2/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
 
     <h3 style="text-align:center;">Create Your Article</h3>
     <div style="width: 400px; margin: 2rem auto;">
@@ -12,4 +13,5 @@
             <input type="submit" class="btn btn-secondary rounded-pill col-6 mt-3" value="SUBMIT">
         </form>
     </div>
+<script>var editor = new MediumEditor('.editable');</script>
 {% endblock %}
