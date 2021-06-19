@@ -9,6 +9,11 @@
             <div>{{ target_project.description }}</div>
         </div>
     <hr>
+        {% if not subscription %}
+            <div><a class="btn btn-dark rounded-pill col-3 mt-3" href="{% url 'subscriptionapp:subscribe' %}?project_pk={{target_project.pk}}">Subscribe</a></div>
+        {% else %}
+            <div><a class="btn btn-dark rounded-pill col-3 mt-3" href="{% url 'subscriptionapp:subscribe' %}?project_pk={{target_project.pk}}">Unsubscribe</a></div>
+        {% endif %}
         <div>
              {% include 'snippets/list_Fragment.html' with article_list=object_list %}
         </div>

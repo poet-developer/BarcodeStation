@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/',include('accountapp.urls')),
     path('profiles/',include('profileapp.urls')),
     path('articles/',include('articleapp.urls')),
-    path('cooments/',include('commentapp.urls')),
+    path('comments/',include('commentapp.urls')),
     path('projects/',include('projectapp.urls')),
+    path('subscribe/',include('subscriptionapp.urls')),
 ]
