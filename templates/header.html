@@ -1,13 +1,13 @@
 <header class="header">
-    <h1 class="header-logo">BarcodeStation</h1>
-    <a href="{% url 'articleapp:list' %}"><span>Article</span></a>
-    <a href="{% url 'projectapp:list' %}"><span>Project</span></a>
-    <a href="{% url 'subscriptionapp:list' %}"><span>Subscribe</span></a>
+    <h1 class="header-logo"><a href="{% url 'home'%}">BarcodeStation</a></h1>
+    <a href="{% url 'articleapp:list' %}"><span>Article</span></a> |
+    <a href="{% url 'projectapp:list' %}"><span>Project</span></a> |
+    <a href="{% url 'subscriptionapp:list' %}"><span>Subscribe</span></a> |
     {% if not user.is_authenticated %}
-        <a href="{% url 'accountapp:login' %}?next={{request.path}}"><span>Login</span></a>
+        <a href="{% url 'accountapp:login' %}?next={{request.path}}"><span>Login</span></a> |
         <a href="{% url 'accountapp:create' %}"><span>SignUp</span></a>
     {% else %}
-        <a href="{% url 'accountapp:logout' %}?next={{request.path}}"><span>Logout</span></a>
+        <a href="{% url 'accountapp:logout' %}?next={{request.path}}"><span>Logout</span></a> |
         <a href="{% url 'accountapp:detail' pk=user.pk %}"><span>MyPage</span></a>
     {% endif %}
 
