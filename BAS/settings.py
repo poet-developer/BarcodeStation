@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
 from pathlib import Path
-import environ,os
+import environ, os
 from django.urls import reverse_lazy
 
 env = environ.Env(
