@@ -17,7 +17,7 @@
 * Maria DB
 * Docker
 
-### :rainbow: 공부한 강의
+### :rainbow: 참고
 * [인프런강의 - 작정하고 장고!](https://www.inflearn.com/course/%EC%9E%A5%EA%B3%A0-%ED%95%80%ED%84%B0%EB%A0%88%EC%8A%A4%ED%8A%B8)
 ---
 ### :calling:&nbsp;&nbsp;Contact me!
